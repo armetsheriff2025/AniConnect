@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AniConnect | Enhanced Fan Community</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23ff006e'/><text y='.9em' font-size='90' x='50%' text-anchor='middle' fill='white' font-family='Arial'>A</text></svg>">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Login Modal -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal login-modal">
+            <div class="login-header">
+                <div class="logo-large">A</div>
+                <h1>Welcome to AniConnect</h1>
+                <p>The ultimate anime fan community</p>
+            </div>
+            
+            <div class="social-login">
+                <button class="social-btn google" onclick="socialLogin('google')">
+                    <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                    Continue with Google
+                </button>
+                
+                <button class="social-btn discord" onclick="socialLogin('discord')">
+                    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/></svg>
+                    Continue with Discord
+                </button>
+                
+                <button class="social-btn github" onclick="socialLogin('github')">
+                    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                    Continue with GitHub
+                </button>
+                
+                <div class="divider"><span>or</span></div>
+                
+                <button class="social-btn email" onclick="showEmailLogin()">
+                    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    Continue with Email
+                </button>
+            </div>
+
+            <!-- Email Login Form -->
+            <div class="email-form hidden" id="emailForm">
+                <input type="email" id="emailInput" placeholder="Email address" autocomplete="email">
+                <input type="password" id="passwordInput" placeholder="Password" autocomplete="current-password">
+                <button class="btn-primary" onclick="emailLogin()">Sign In</button>
+                <button class="btn-text" onclick="showSocialLogin()">← Back to options</button>
+            </div>
+
+            <!-- Mod Access -->
+            <div class="mod-access">
+                <button class="mod-toggle" onclick="toggleModLogin()">🛡️ Moderator Access</button>
+                <div class="mod-form hidden" id="modForm">
+                    <input type="email" id="modEmail" placeholder="Mod Email" autocomplete="username">
+                    <input type="password" id="modPass" placeholder="Mod Password" autocomplete="current-password">
+                    <button class="btn-primary mod-btn" onclick="modLogin()">Login as Moderator</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Report Modal -->
+    <div class="modal-overlay hidden" id="reportModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Report Message</h2>
+                <button class="close-btn" onclick="closeReportModal()">✕</button>
+            </div>
+            <div class="modal-body">
+                <p style="margin-bottom: 16px;">Reported content:</p>
+                <p id="reportedContent" class="reported-content"></p>
+                <div class="report-reasons">
+                    <label class="radio-label">
+                        <input type="radio" name="reason" value="hostility">
+                        <span>Hostility/Harassment</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="reason" value="spam">
+                        <span>Spam</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="reason" value="nsfw">
+                        <span>NSFW Content</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="reason" value="other">
+                        <span>Other</span>
+                    </label>
+                </div>
+                <button class="btn-primary" onclick="submitReport()" style="margin-top: 16px; width: 100%;">Submit Report</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Members Sidebar -->
+    <div class="members-sidebar hidden" id="membersSidebar">
+        <div class="members-header">
+            <h3>👥 Members</h3>
+            <button class="close-btn" onclick="toggleMembers()">✕</button>
+        </div>
+        <div class="members-list" id="membersList"></div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay" onclick="closeSidebar()"></div>
+
+    <!-- Notification Badge -->
+    <div class="notification-badge hidden" id="notificationBadge">0</div>
+
+    <!-- Main Layout -->
+    <div class="layout" id="mainLayout">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="brand">
+                    <div class="logo">A</div>
+                    <div class="brand-text">
+                        <h1>AniConnect</h1>
+                        <span>Enhanced Edition</span>
+                    </div>
+                </div>
+                <button class="mobile-close" onclick="closeSidebar()">✕</button>
+            </div>
+
+            <!-- Navigation Tabs -->
+            <div class="sidebar-tabs">
+                <button class="tab-btn active" onclick="switchView('chat')">💬</button>
+                <button class="tab-btn" onclick="switchView('dms')">📨</button>
+                <button class="tab-btn" onclick="switchView('profile')">👤</button>
+                <button class="tab-btn" onclick="switchView('settings')">⚙️</button>
+            </div>
+
+            <!-- Text Channels -->
+            <nav class="nav-section">
+                <div class="nav-header">
+                    <span>📝 Text Channels</span>
+                    <button class="add-btn" id="addChannelBtn" onclick="createChannel()" title="Create Channel">+</button>
+                </div>
+                <div class="channel-list" id="channelList"></div>
+            </nav>
+
+            <!-- Voice Channels -->
+            <nav class="nav-section">
+                <div class="nav-header">
+                    <span>🔊 Voice Channels</span>
+                </div>
+                <div class="voice-channel-list" id="voiceChannelList"></div>
+            </nav>
+
+            <!-- User Section -->
+            <div class="user-section">
+                <div class="user-card">
+                    <div class="user-avatar-container">
+                        <div class="avatar" id="userAvatar">?</div>
+                        <span class="status-dot" id="userStatus"></span>
+                    </div>
+                    <div class="user-info">
+                        <div class="user-name" id="userName">Guest</div>
+                        <div class="user-role" id="userRole">Member</div>
+                    </div>
+                    <button class="user-settings-btn" onclick="logout()" title="Logout">🚪</button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main" id="mainContent">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <div class="header-icon" id="headerIcon">💬</div>
+                    <div class="header-title">
+                        <h2 id="channelTitle">general</h2>
+                        <p id="channelDesc">General anime discussion</p>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button class="icon-btn" onclick="toggleSearch()" title="Search">🔍</button>
+                    <button class="icon-btn" onclick="toggleMembers()" title="Members">👥</button>
+                    <button class="icon-btn" onclick="socket.emit('get_stats')" title="Stats">📊</button>
+                    <span class="online-count" id="onlineCount">0 online</span>
+                </div>
+            </header>
+
+            <!-- Search Bar -->
+            <div class="search-bar" id="searchBar">
+                <input type="text" placeholder="Search messages..." id="searchInput">
+                <button onclick="toggleSearch()">✕</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+
+            <!-- Pinned Message Bar -->
+            <div class="pinned-message-bar" id="pinnedMessageBar"></div>
+
+            <!-- Chat View -->
+            <div class="view-container" id="chatView">
+                <div class="messages" id="messageContainer"></div>
+
+                <div class="typing-indicator" id="typingIndicator">
+                    <span>Someone is typing...</span>
+                    <div class="dots"><div></div><div></div><div></div></div>
+                </div>
+
+                <!-- Reply Preview -->
+                <div class="reply-preview" id="replyPreview"></div>
+
+                <!-- Editing Indicator -->
+                <div class="editing-indicator" id="editingIndicator"></div>
+
+                <div class="input-area">
+                    <div class="composer">
+                        <input type="file" id="fileInput" accept="image/*" style="display: none;">
+                        <button class="attach-btn" onclick="document.getElementById('fileInput').click()" title="Attach Image">📎</button>
+                        <button class="emoji-btn" id="emojiButton" title="Emoji">😊</button>
+                        <button class="gif-btn" id="gifButton" onclick="showToast('GIF picker coming soon!', 'info')" title="GIF">GIF</button>
+                        <input type="text" placeholder="Send a message..." id="msgInput" autocomplete="off" maxlength="2000">
+                        <span class="char-counter" id="charCounter">0/2000</span>
+                        <button class="poll-btn" id="pollButton" title="Create Poll">📊</button>
+                        <button class="send-btn" id="sendBtn">➤</button>
+                    </div>
+                </div>
+
+                <!-- Emoji Picker -->
+                <div class="emoji-picker" id="emojiPicker"></div>
+            </div>
+
+            <!-- DM View -->
+            <div class="view-container hidden" id="dmView" style="display: none;">
+                <div class="dm-header">
+                    <h3>Direct Messages with <span id="dmUsername"></span></h3>
+                    <button onclick="showView('chatView'); state.currentView = 'chat'">Back to Chat</button>
+                </div>
+                <div class="dm-messages-container" id="dmMessagesContainer"></div>
+                <div class="dm-input-area">
+                    <input type="text" placeholder="Send a direct message..." id="dmInput" autocomplete="off">
+                    <button onclick="sendDM()">Send</button>
+                </div>
+            </div>
+
+            <!-- Profile View -->
+            <div class="view-container hidden" id="profileView" style="display: none;">
+                <div class="profile-container">
+                    <h2>👤 Your Profile</h2>
+                    <div class="profile-stats">
+                        <div class="profile-stat">
+                            <span class="stat-label">Level</span>
+                            <span class="stat-value" id="profileLevel">1</span>
+                        </div>
+                        <div class="profile-stat">
+                            <span class="stat-label">XP</span>
+                            <span class="stat-value" id="profileXP">0</span>
+                        </div>
+                        <div class="profile-stat">
+                            <span class="stat-label">Messages</span>
+                            <span class="stat-value" id="profileMessages">0</span>
+                        </div>
+                    </div>
+                    <div class="profile-xp-bar">
+                        <div class="xp-bar-fill" id="profileXPBar"></div>
+                    </div>
+                    <button class="btn-primary" onclick="socket.emit('get_leaderboard')">View Leaderboard 🏆</button>
+                </div>
+                <div id="leaderboardContainer"></div>
+            </div>
+
+            <!-- Settings View -->
+            <div class="view-container hidden" id="settingsView" style="display: none;">
+                <div class="settings-container">
+                    <h2>⚙️ Settings</h2>
+                    <div class="settings-group">
+                        <h3>Appearance</h3>
+                        <div class="setting-item">
+                            <label>Theme</label>
+                            <button id="themeToggle" class="btn-secondary">Toggle Theme</button>
+                        </div>
+                    </div>
+                    <div class="settings-group">
+                        <h3>Notifications</h3>
+                        <div class="setting-item">
+                            <label>Desktop Notifications</label>
+                            <button id="notificationToggle" class="btn-secondary">Toggle</button>
+                        </div>
+                        <div class="setting-item">
+                            <label>Sound Effects</label>
+                            <button id="soundToggle" class="btn-secondary">Toggle</button>
+                        </div>
+                    </div>
+                    <div class="settings-group">
+                        <h3>Account</h3>
+                        <button class="btn-danger" onclick="logout()">Logout</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leaderboard View -->
+            <div class="view-container hidden" id="leaderboardView" style="display: none;">
+                <div class="leaderboard-container">
+                    <h2>🏆 Leaderboard</h2>
+                    <div id="leaderboardList"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Socket.IO -->
+    <script src="/socket.io/socket.io.js"></script>
+    
+    <!-- Main App Script -->
+    <script src="app.js"></script>
+</body>
+</html>
